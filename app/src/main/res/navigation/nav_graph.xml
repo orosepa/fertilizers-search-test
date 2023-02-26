@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fertilizersFragment">
+
+    <fragment
+        android:id="@+id/fertilizersFragment"
+        android:name="com.example.ipartner_test.presentation.FertilizersFragment"
+        android:label="ListFragment"
+        tools:layout="@layout/fragment_fertilizers">
+        <action
+            android:id="@+id/action_fertilizersFragment_to_fertilizerCardFragment"
+            app:destination="@id/fertilizerCardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fertilizerCardFragment"
+        android:name="com.example.ipartner_test.presentation.FertilizerCardFragment"
+        android:label="fragment_fertilizer_card"
+        tools:layout="@layout/fragment_fertilizer_card" >
+        <action
+            android:id="@+id/action_fertilizerCardFragment_to_fertilizersFragment"
+            app:destination="@id/fertilizersFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+</navigation>
